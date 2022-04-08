@@ -50,6 +50,30 @@ namespace ClassDemoOperator.model
          * Operator overloads
          */
 
+        public static bool operator ==(Position a, Position b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Position a, Position b)
+        {
+            return !a.Equals(b);
+        }
+
+        public static Position operator +(Position a, Position b)
+        {
+            return new Position(a.X + b.X, a.Y + b.Y);
+        }
+
+        public static Position operator +(int val, Position b)
+        {
+            return new Position(b.X+val, b.Y+val);
+        }
+
+        public static Position operator +(Position b, int val)
+        {
+            return val + b;
+        }
 
 
     }
